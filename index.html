@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KELVIN AND Freedah</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  
+
+<section class="hero">
+  <div class="overlay">
+    <h1 class="couple-names">Kelvin ❤️ Freedah</h1>
+    <p class="subtitle">Together, Forever Begins..  </p>
+    <p><strong>OFFICIATION</strong></p>
+    <p class="date-location">📅 06th Sept 2026 | 📍 Lumbira SDA Church</p>
+    <div class="buttons">
+      <a href="#invitation" class="btn btn-gold">View Our Invitation</a>
+      <a href="#countdown" class="btn btn-burgundy">Countdown to Our Big Day</a>
+    </div>
+  </div>
+</section>
+<div id="countdown">
+  <div class="time-card"><span id="days"></span> Days</div>
+  <div class="time-card"><span id="hours"></span> Hours</div>
+  <div class="time-card"><span id="minutes"></span> Minutes</div>
+  <div class="time-card"><span id="seconds"></span> Seconds</div>
+</div>
+
+<script>
+// Today's date
+let today = new Date();
+
+// Target wedding date: Sunday, 6th September 2026 at 1:00 PM
+let weddingDate = new Date(2026, 8, 6, 13, 0, 0); 
+// Note: months are 0-indexed (0 = Jan, so 8 = September)
+
+setInterval(() => {
+  let now = new Date().getTime();
+  let distance = weddingDate.getTime() - now;
+
+  if (distance < 0) {
+    document.getElementById("countdown").innerHTML =
+      "💍 Today is the Day! ❤️ We are getting married!";
+    return;
+  }
+
+  document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+  document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
+}, 1000);
+</script>
+
+
+<section id="invitation" class="invitation-card">
+  <p>Together with their families,</p>
+  <h2>Kelvin & Freedah</h2>
+  <p>Request the pleasure of your company...</p>
+  <p>📅 12th Sept 2026 | ⏰ 13:00 pm | 📍 Theo's Garden Venue</p>
+  <a href="invitation.pdf" class="btn btn-gold">Download Invitation</a>
+</section>
+<footer>
+  <p>Two hearts. One love. One beautiful journey. ❤️</p>
+  <p>Made with ❤️ for Kelvin & Freedah</p>
+</footer>
+</body>
+</html>
